@@ -1,0 +1,25 @@
+Public Class Form1
+    Dim User, Pass As String
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+        MessageBox.Show("Are you sure you want to cancel?", "Close the tab?", MessageBoxButtons.OK, MessageBoxIcon.Question)
+
+        Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        User = TbUser.Text
+        Pass = TbPass.Text
+
+        If User = "admin" AndAlso Pass = "admin" Then
+            MessageBox.Show("Log in Successful!", "Welcome!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Me.Hide()
+            HomeForm.Show()
+
+        Else
+            MessageBox.Show("Inputted Username or Password was Incorrect", "Log In failed", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        End If
+    End Sub
+End Class
+

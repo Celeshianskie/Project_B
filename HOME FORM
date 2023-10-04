@@ -1,0 +1,73 @@
+Public Class HomeForm
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Hide()
+        Form1.Show()
+        Form1.TbPass.Text = ""
+        Form1.TbUser.Text = ""
+    End Sub
+
+    Private Sub HawaiiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HawaiiToolStripMenuItem.Click
+
+        TourForm.LblTitle.Text = "Hawaii"
+        TourForm.Type1.Text = "Deep Sea Fishing"
+        TourForm.Type2.Text = "Kayaking"
+        TourForm.Type3.Text = "Scuba"
+        TourForm.Type4.Text = "Snorkeling"
+        TourForm.Hour1.Text = "8 Hours"
+        TourForm.Hour2.Text = "2 Hours"
+        TourForm.Hour3.Text = "3 Hours"
+        TourForm.Hour4.Text = "4 Hours"
+        TourForm.Cost1.Text = "$199"
+        TourForm.Cost2.Text = "$89"
+        TourForm.Cost3.Text = "$119"
+        TourForm.Cost4.Text = "$89"
+        Me.Hide()
+        TourForm.Show()
+    End Sub
+
+    Private Sub JamaicaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles JamaicaToolStripMenuItem.Click
+
+        TourForm.LblTitle.Text = "Jamaica"
+        TourForm.Type1.Text = "Glass Bottom Boat"
+        TourForm.Type2.Text = "Parasailing"
+        TourForm.Type3.Text = "Snorkeling"
+        TourForm.Type4.Hide()
+        TourForm.Hour1.Text = "2 Hours"
+        TourForm.Hour2.Text = "2 Hours"
+        TourForm.Hour3.Text = "2 Hours"
+        TourForm.Hour4.Hide()
+        TourForm.Cost1.Text = "$39"
+        TourForm.Cost2.Text = "$119"
+        TourForm.Cost3.Text = "$59"
+        TourForm.Cost4.Hide()
+        Me.Hide()
+        TourForm.Show()
+    End Sub
+
+    Private Sub MaldivesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaldivesToolStripMenuItem.Click
+        TourForm.LblTitle.Text = "Maldives"
+        TourForm.Type1.Text = "Deep Sea Fishing"
+        TourForm.Type2.Text = "Glass Bottom Boat"
+        TourForm.Type3.Text = "Scuba"
+        TourForm.Type4.Text = "Snorkeling"
+        TourForm.Hour1.Text = "4 Hours"
+        TourForm.Hour2.Text = "2 Hours"
+        TourForm.Hour3.Text = "3 Hours"
+        TourForm.Hour4.Text = "3 Hours"
+        TourForm.Cost1.Text = "$89"
+        TourForm.Cost2.Text = "$29"
+        TourForm.Cost3.Text = "$119"
+        TourForm.Cost4.Text = "$89"
+        Me.Hide()
+        TourForm.Show()
+    End Sub
+
+    Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
+        Me.Hide()
+        AboutForm.Show()
+    End Sub
+
+    Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
+
+    End Sub
+End Class

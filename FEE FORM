@@ -1,0 +1,205 @@
+Public Class FeeForm
+
+    Dim PAX, Costof, Total As Double
+
+    Dim Hours As String
+
+    Private Sub HomeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HomeToolStripMenuItem.Click
+        Me.Hide()
+        HomeForm.Show()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Hide()
+        Form1.Show()
+        Form1.TbPass.Text = ""
+        Form1.TbUser.Text = ""
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+
+
+        LblPax.Hide()
+        LblIt.Hide()
+        TbPax.Hide()
+        TbPax.Text = ""
+        CbIten.Hide()
+        CbIten.Items.Clear()
+        Btn1.Hide()
+        Button2.Hide()
+        Label2.Hide()
+        Label3.Hide()
+        Label4.Hide()
+        LblTour.Hide()
+        LblCost.Hide()
+        LblLength.Hide()
+        CbTour.SelectedIndex = 0
+
+    End Sub
+
+    Private Sub Btn1_Click(sender As Object, e As EventArgs) Handles Btn1.Click
+
+
+        Double.TryParse(TbPax.Text, PAX)
+
+        If PAX < 0 AndAlso PAX > 100 Then
+            MessageBox.Show("Please enter a number between 1-99", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+
+        End If
+
+        Select Case CbTour.SelectedItem
+
+            Case "Hawaii"
+                Select Case CbIten.SelectedItem
+
+                    Case "Deep Sea Fishing"
+
+                        Hours = "8 hours"
+                        Costof = 199
+
+                    Case "Kayaking"
+
+                        Hours = "2 hours"
+                        Costof = 89
+
+                    Case "Scuba"
+
+                        Hours = "3 hours"
+                        Costof = 119
+
+                    Case "Snorkeling"
+
+                        Hours = "4 hours"
+                        Costof = 89
+
+                End Select
+
+            Case "Jamaica"
+
+                Select Case CbIten.SelectedItem
+
+                    Case "Glass Bottom Boat"
+
+                        Hours = "2 hours"
+                        Costof = 39
+
+                    Case "Parasailing"
+
+                        Hours = "2 hours"
+                        Costof = 119
+
+                    Case "Snorkeling"
+
+                        Hours = "2 hours"
+                        Costof = 59
+
+                End Select
+
+            Case "Maldives"
+
+                Select Case CbIten.SelectedItem
+
+                    Case "Deep Sea Fishing"
+
+                        Hours = "4 hours"
+                        Costof = 89
+
+                    Case "Glass Bottom Boat"
+
+                        Hours = "2 hours"
+                        Costof = 29
+
+                    Case "Scuba"
+
+                        Hours = "3 hours"
+                        Costof = 119
+
+                    Case "Snorkeling"
+
+                        Hours = "3 hours"
+                        Costof = 89
+
+                End Select
+        End Select
+
+        Total = PAX * Costof
+
+        LblTour.Text = CbIten.SelectedItem
+        LblCost.Text = Convert.ToString(Total)
+        LblLength.Text = Hours
+
+        Label2.Show()
+        Label3.Show()
+        Label4.Show()
+        LblTour.Show()
+        LblCost.Show()
+        LblLength.Show()
+
+    End Sub
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbTour.SelectedIndexChanged
+
+
+
+        Select Case CbTour.SelectedItem
+
+            Case "Hawaii"
+
+                LblPax.Show()
+                LblIt.Show()
+                TbPax.Show()
+                CbIten.Show()
+                Btn1.Show()
+                Button2.Show()
+
+                CbIten.Items.Clear()
+
+                CbIten.Items.Add("Deep Sea Fishing")
+                CbIten.Items.Add("Kayaking")
+                CbIten.Items.Add("Scuba")
+                CbIten.Items.Add("Snorkeling")
+
+
+
+            Case "Jamaica"
+
+                LblPax.Show()
+                LblIt.Show()
+                TbPax.Show()
+                CbIten.Show()
+                Btn1.Show()
+                Button2.Show()
+
+                CbIten.Items.Clear()
+
+                CbIten.Items.Add("Glass Bottom Boat")
+                CbIten.Items.Add("Parasailing")
+                CbIten.Items.Add("Snorkeling")
+
+
+            Case "Maldives"
+
+                LblPax.Show()
+                LblIt.Show()
+                TbPax.Show()
+                CbIten.Show()
+                Btn1.Show()
+                Button2.Show()
+
+                CbIten.Items.Clear()
+
+                CbIten.Items.Add("Deep Sea Fishing")
+                CbIten.Items.Add("Glass Bottom Boat")
+                CbIten.Items.Add("Scuba")
+                CbIten.Items.Add("Snorkeling")
+
+
+
+        End Select
+
+    End Sub
+
+
+
+
+End Class
